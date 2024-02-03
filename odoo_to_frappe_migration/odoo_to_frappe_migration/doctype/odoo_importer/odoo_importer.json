@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-08 17:31:17.444941",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "host",
+  "password",
+  "column_break_jctd",
+  "username",
+  "database",
+  "section_break_xsow",
+  "reference_doctype",
+  "import_type",
+  "column_break_ztir",
+  "odoo_model",
+  "limit",
+  "import_from",
+  "total_data",
+  "section_break_erum",
+  "odoo_fields",
+  "section_break_txxl",
+  "data_mapping",
+  "section_break_hloi",
+  "connection_status",
+  "status",
+  "section_break_wpaj",
+  "odoo_data_sample"
+ ],
+ "fields": [
+  {
+   "fieldname": "host",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Host",
+   "read_only_depends_on": "eval:doc.connection_status == \"Connected Successfully\"",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Password",
+   "read_only_depends_on": "eval:doc.connection_status == \"Connected Successfully\"",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jctd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "read_only_depends_on": "eval:doc.connection_status == \"Connected Successfully\"",
+   "reqd": 1
+  },
+  {
+   "fieldname": "database",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Database",
+   "read_only_depends_on": "eval:doc.connection_status == \"Connected Successfully\"",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_hloi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.connection_status != \"Connected Successfully\"",
+   "fieldname": "connection_status",
+   "fieldtype": "Small Text",
+   "label": "Connection Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Pending\nConnected\nConnection Error\nReady\nSuccess\nPartial Success\nError\nTimed Out",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wpaj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "odoo_data_sample",
+   "fieldtype": "HTML Editor",
+   "label": "Odoo Data Sample"
+  },
+  {
+   "fieldname": "section_break_xsow",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Document Type",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "import_type",
+   "fieldtype": "Select",
+   "label": "Import Type",
+   "options": "\nInsert New Records\nUpdate Existing Records",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ztir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "odoo_model",
+   "fieldtype": "Data",
+   "label": "Odoo Model",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_erum",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "odoo_fields",
+   "fieldtype": "Table",
+   "label": "Odoo Fields",
+   "options": "Odoo Data Fields"
+  },
+  {
+   "fieldname": "section_break_txxl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "data_mapping",
+   "fieldtype": "Table",
+   "label": "Data Mapping",
+   "options": "Odoo Importer Data Mapping"
+  },
+  {
+   "fieldname": "limit",
+   "fieldtype": "Int",
+   "label": "Data Import Limit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "import_from",
+   "fieldtype": "Int",
+   "label": "Import From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_data",
+   "fieldtype": "Data",
+   "label": "Total Data"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-14 20:57:32.888292",
+ "modified_by": "Administrator",
+ "module": "Odoo To Frappe Migration",
+ "name": "Odoo Importer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -133,23 +133,28 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"odoo_to_frappe_migration.tasks.all"
-# 	],
-# 	"daily": [
-# 		"odoo_to_frappe_migration.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"odoo_to_frappe_migration.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"odoo_to_frappe_migration.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"odoo_to_frappe_migration.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"cron": {
+		"*/5 * * * *": [
+			"odoo_to_frappe_migration.odoo_to_frappe_migration.doctype.odoo_importer.odoo_importer.start_importer",
+		],
+	},
+	# "all": [
+	# 	"odoo_to_frappe_migration.tasks.all"
+	# ],
+	# "daily": [
+	# 	"odoo_to_frappe_migration.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"odoo_to_frappe_migration.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"odoo_to_frappe_migration.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"odoo_to_frappe_migration.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
